@@ -4,7 +4,7 @@
 ##npm packages
 node_modules/
 
-##webpack default output folder
+##webpack output folder
 public/
 
 ##vscode
