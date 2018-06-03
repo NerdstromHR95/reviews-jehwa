@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '/../public')));
 
 app.get('/:itemNo/init', (req, res) => {
-  var itemNo = req.url.split('/')[1];
+  const itemNo = req.url.split('/')[1];
   db.getReviews(itemNo)
     .then(data => res.send(data));
 });
