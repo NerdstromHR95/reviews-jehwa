@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const Promise = require('bluebird');
 
 mongoose.connect('mongodb://localhost/reviews');
+Promise.promisifyAll(require('mongoose'));
 
 const reviewSchema = mongoose.Schema({
   id: { type: Number, unique: true },
@@ -16,16 +18,12 @@ const reviewSchema = mongoose.Schema({
 
 const Review = mongoose.model('Review', reviewSchema);
 
-// const getReviews = (cb) => {  
-//   cb(Review.find((err, data) => {
-//     console.log(data.tree, 'dadta from db');
-//   }));
-// }
-Review.find((err, data) => {
-  console.log(data);
-})
+const getReviews = () => (
+  Review.findAsync({itemNo: 1})
+);
+
 
 module.exports = {
   Review,
-  // getReviews
-}
+  getReviews,
+};
