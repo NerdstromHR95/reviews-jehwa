@@ -18,8 +18,8 @@ const reviewSchema = mongoose.Schema({
 
 const Review = mongoose.model('Review', reviewSchema);
 
-const getReviews = () => (
-  Review.findAsync({itemNo: 1})
+const getReviews = (itemNo) => (
+  Review.findAsync({itemNo: itemNo})
 );
 
 

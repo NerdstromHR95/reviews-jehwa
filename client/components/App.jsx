@@ -6,6 +6,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      reviews: [],
 
     };
     this.bringData = this.bringData.bind(this);
@@ -16,11 +17,13 @@ class App extends React.Component {
   }
 
 
-
   bringData() {
-    axios.get('/init')
+    axios.get('/87/init')
       .then((res) => {
-        console.log(res, 'response from server');
+        this.setState({
+          reviews: res.data,
+        });
+        // console.log(res.data, 'response from server');
       })
       .catch((err) => {
         console.log(err, 'error from server');

@@ -7,9 +7,10 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/../public')));
 
-app.get('/init', (data) => {
-  db.getReviews()
-    .then(data => console.log(data));
+app.get('/:itemNo/init', (req, res) => {
+  var itemNo = req.url.split('/')[1];
+  db.getReviews(itemNo)
+    .then(data => res.send(data));
 });
 
 app.listen(3002, () => console.log('server is listening on port 3002'));
