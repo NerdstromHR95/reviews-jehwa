@@ -18,7 +18,7 @@ const ReviewListEntry = props => (
       </div>
       <div className="reviewerInfo">
         <span>
-          {props.review.nickname}
+          {`${props.review.nickname} `}
         </span>
         <span>
           Sweepstakes entry

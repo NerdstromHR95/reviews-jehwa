@@ -19,12 +19,11 @@ class App extends React.Component {
 
 
   bringData() {
-    axios.get('/87/init')
+    axios.get('/82/init')
       .then((res) => {
         this.setState({
           reviews: res.data,
         });
-        // console.log(res.data, 'response from server');
       })
       .catch((err) => {
         console.log(err, 'error from server');
