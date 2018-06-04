@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import ReviewList from './ReviewList.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,12 +19,11 @@ class App extends React.Component {
 
 
   bringData() {
-    axios.get('/87/init')
+    axios.get('/82/init')
       .then((res) => {
         this.setState({
           reviews: res.data,
         });
-        // console.log(res.data, 'response from server');
       })
       .catch((err) => {
         console.log(err, 'error from server');
@@ -33,10 +33,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="reviewSummary" />
-        <div className="sorting" />
+        <div className="reviewSummary">
+          ReviewSummary will be here
+        </div>
+        <div className="sorting" >
+          Review sorting parts will be here
+        </div>
         <div className="reviews">
-        Hi
+          <ReviewList reviews={this.state.reviews} />
         </div>
       </div>
     );
