@@ -1,3 +1,31 @@
-body {
-    line-height: 2;
+div {
+    border: 1px solid black;
+    font-family: 'Brandon Text';
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+div.review {
+    /* height: auto; */
+    display: block;
+    padding: 10px 10px 10px 10px; 
+    margin-top: 68px;
+    border: 1px solid blue;
+}
+
+div.mainReviews {
+    display: block;
+    border: 1px solid red;
+}
+
+div.leftColumn {
+    display: inline-block;
+    white-space: normal;
+    width: 42%;
+    padding-right: 90px;
+}
+div.rightColumn {
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
 }
