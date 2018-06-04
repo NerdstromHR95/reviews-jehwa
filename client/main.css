@@ -29,3 +29,10 @@ div.rightColumn {
     display: inline-block;
     text-align: left;
 }
+
+.star {
+    height: 100px;
+    width: 20px;
+    border: 1px solid red;
+
+}
