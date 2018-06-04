@@ -2,10 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import FitRating from './FitRating.jsx';
 import WidthRating from './WidthRating.jsx';
+import Stars from './Stars.jsx';
 
 const ReviewListEntry = props => (
   <div className="review">
     <div className="leftColumn">
+      <Stars star={props.review.stars} />
       <div>
         <strong>
           {props.review.title}
