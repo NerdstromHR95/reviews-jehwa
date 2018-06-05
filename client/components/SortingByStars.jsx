@@ -30,7 +30,7 @@ class SortingByStars extends React.Component {
         <div onClick={e => this.dropdown(e)}>
           Star Rating
         </div>
-        <ul onClick={e => this.props.sortedByNumber(e.target.value)}>
+        <ul className="options" onClick={e => this.props.sortedByNumber(e.target.value)}>
           <li value="0"> All stars</li>
           <li value="1"> 1 star </li>
           <li value="2"> 2 star </li>
