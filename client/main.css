@@ -5,19 +5,78 @@
     line-height: 1.4;
 }
 
-table {
-    background-color: yellow;
+.reviewSummary {
+    padding-bottom: 10px;
 }
+
+.summaryStar {
+    display: inline-block;
+    border: 1px solid black;
+    vertical-align: top;
+    width: 300px;
+    
+}
+
+.star-ratings-summary {
+    display: inline-block;
+    width: 180px;
+    vertical-align: bottom;
+
+}
+
+
+.star-ratings-summary-top{
+    border: 1px solid red;
+    position: absolute;
+    overflow: hidden;
+    display: block;
+    width: 120px;
+    height: 30px;   
+}
+.top {
+    position: absolute;
+    overflow: hidden;
+}
+.star-ratings-summary-bottom{
+    border: 1px solid blue;
+    overflow: hidden; 
+    display: inline-block;
+    width: 120px;
+}
+
+.star-ratings-summary-top svg {
+    fill: black;
+    overflow: hidden;
+}
+
+.star-ratings-summary-bottom svg {
+    fill: lightgray;
+}
+
+.reviewCount {
+    border: 1px solid blue;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.summaryRating {
+    display: inline-block;
+    border: 1px solid black;
+    vertical-align: top;
+}
+
+.writeReview {
+    display: inline-block;
+    border: 1px solid black;
+    vertical-align: top;
+
+}
+
+
 .sortBy {
     vertical-align: top;
     width: 220px;
-    border: 1px solid red;
-}
-
-.sortByStar{
-    vertical-align: top;
-    width: 396px;
-    border: 1px solid blue;
+    border: 1px solid black;
 }
 
 .optionForSortBy {
@@ -29,6 +88,23 @@ table {
     padding: 0px;
     margin-top: 0px;
 }
+.sortByStar{
+    vertical-align: top;
+    width: 396px;
+    /* border: 1px solid blue; */
+}
+
+
+.sortStar-before {
+    border-top: 2px solid gray;
+    text-align: center;
+    width: 110px;
+}
+.sortStar-after {
+    border: 1px solid gray;
+    text-align: center;
+    width: 110px;
+}
 
 ul {
     list-style-type: none;
@@ -37,7 +113,7 @@ ul {
 .options{
     border: 1px solid red;
     position: absolute;
-    width: 396px;
+    width: 110px;
     background-color: white;
     z-index: 1;
     padding: 0px;

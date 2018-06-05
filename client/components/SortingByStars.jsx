@@ -37,15 +37,15 @@ class SortingByStars extends React.Component {
     if (!this.state.clicked) {
       return (
         <td className="sortByStar">
-          <div onClick={e => this.dropdown(e)}>
-          {divVal[this.state.star] || `Star Rating`}
+          <div className="sortStar-before" onClick={e => this.dropdown(e)}>
+            {divVal[this.state.star] || `Star Rating`}
           </div>
         </td>
       );
     }
     return (
       <td className="sortByStar">
-        <div onClick={e => this.dropdown(e)}>
+        <div className="sortStar-after" onClick={e => this.dropdown(e)}>
           Star Rating
         </div>
         <ul className="options" onClick={e => this.clickHandler(e)}>

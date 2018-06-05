@@ -19,27 +19,27 @@ class SortingBy extends React.Component {
   clickHandler(e) {
     this.setState({
       clicked: !this.state.clicked,
-      sortVal: e.target.value
-    }, () => this.props.sortedByNumber(this.state.sortVal))
-  } 
+      sortVal: e.target.value,
+    }, () => this.props.sortedByNumber(this.state.sortVal));
+  }
 
   render() {
-    let sortVal = {
-      10: "Star Rating",
-      11: "Submission Time",
-    }
+    const sortVal = {
+      10: 'Star Rating',
+      11: 'Submission Time',
+    };
     if (!this.state.clicked) {
       return (
-        <td className="sortBy">
-          <div onClick={e => this.dropDown(e)}>
-            { sortVal[this.state.sortVal] ||'Sort Reviews'}
+        <td >
+          <div className="sortBy" onClick={e => this.dropDown(e)}>
+            { sortVal[this.state.sortVal] || 'Sort Reviews'}
           </div>
         </td>
       );
     }
     return (
-      <td className="sortBy">
-        <div onClick={e => this.dropDown(e)}>
+      <td>
+        <div className="sortBy" onClick={e => this.dropDown(e)}>
           Sort Reviews
         </div>
         <ul className="optionForSortBy" onClick={e => this.clickHandler(e)}>
