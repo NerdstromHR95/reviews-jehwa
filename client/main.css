@@ -5,6 +5,21 @@
     line-height: 1.4;
 }
 
+table {
+    background-color: yellow;
+}
+.sortBy {
+    vertical-align: top;
+    border: 1px solid red;
+
+}
+
+.sortByStar{
+    vertical-align: top;
+    width: 396px;
+    border: 1px solid red;
+}
+
 div.mainReviews {
     display: block;
     border: 1px solid red;

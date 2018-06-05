@@ -7,17 +7,12 @@ class SortingByStars extends React.Component {
       clicked: false,
     };
     this.dropdown = this.dropdown.bind(this);
-    this.clickHandler = this.clickHandler.bind(this);
   }
 
   dropdown(e) {
     this.setState({
       clicked: !this.state.clicked,
     });
-  }
-
-  clickHandler(e) {
-    console.log(e.target.value, typeof e.target.value, e.target.value == true);
   }
 
   render() {
@@ -36,7 +31,7 @@ class SortingByStars extends React.Component {
           Star Rating
         </div>
         <ul onClick={e => this.props.sortedByNumber(e.target.value)}>
-          <li value=""> All stars</li>
+          <li value="0"> All stars</li>
           <li value="1"> 1 star </li>
           <li value="2"> 2 star </li>
           <li value="3"> 3 star </li>
