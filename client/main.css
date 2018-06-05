@@ -102,11 +102,9 @@
 }
 
 .sortByStar {
-    vertical-align: top;
-    padding-left: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 396px;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .sortStar-before {
@@ -154,12 +152,10 @@ li:hover {
 }
 
 .sortByMain {
-    vertical-align: top;
-    float: right;
-    padding-top: 20px;
-    padding-right: 0px;
-    padding-bottom: 20px;
-
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 100px;    
 }
 
 .sortBy {
