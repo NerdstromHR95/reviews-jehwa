@@ -6,10 +6,10 @@ class SortingBy extends React.Component {
     this.state = {
       clicked: false,
     };
-    this.dropDown2 = this.dropDown2.bind(this);
+    this.dropDown = this.dropDown.bind(this);
   }
 
-  dropDown2(e) {
+  dropDown(e) {
     this.setState({
       clicked: !this.state.clicked,
     });
@@ -19,7 +19,7 @@ class SortingBy extends React.Component {
     if (!this.state.clicked) {
       return (
         <td className="sortBy">
-          <div onClick={e => this.dropDown2(e)}>
+          <div onClick={e => this.dropDown(e)}>
             Sort Reviews
           </div>
         </td>
@@ -27,7 +27,7 @@ class SortingBy extends React.Component {
     }
     return (
       <td className="sortBy">
-        <div onClick={e => this.dropDown2(e)}>
+        <div onClick={e => this.dropDown(e)}>
           Sort Reviews
         </div>
         <ul className="optionForSortBy" onClick={e => {

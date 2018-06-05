@@ -10,6 +10,7 @@ class App extends React.Component {
     this.state = {
       reviews: [],
       filtered: [],
+      sortedByStars: false,
 
     };
     this.bringData = this.bringData.bind(this);
@@ -22,7 +23,7 @@ class App extends React.Component {
 
 
   bringData() {
-    axios.get('/82/init')
+    axios.get('/1/init')
       .then((res) => {
         this.setState({
           reviews: res.data,
@@ -39,19 +40,27 @@ class App extends React.Component {
     let filtered;
     if (starNum === 0) {
       filtered = this.state.reviews;
+      this.setState({
+        sortedByStars: false
+      })
     }
     if (starNum >= 1 && starNum <= 5) {
       filtered = this.state.reviews.filter(review => review.stars === starNum);
+      this.setState({
+        sortedByStars: true
+      })
     }
-    if (starNum === 10) {
+    if (starNum === 10 && !this.state.sortedByStars) {
       filtered = this.state.filtered.sort((a, b) => b.stars - a.stars);
     }
     if (starNum === 11) {
       filtered = this.state.filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
     }
-    this.setState({
-      filtered,
-    })
+    if(filtered) {
+      this.setState({
+        filtered,
+      })
+    }
   }
 
   render() {
