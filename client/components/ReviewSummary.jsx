@@ -78,7 +78,7 @@ const ReviewSummary = (props) => {
             Fit rating:
           </strong>
           <span>
-            {fitRating[props.aveFitRating]}
+            {`   ${fitRating[props.aveFitRating]}`}
           </span>
         </div>
         <div>
@@ -86,12 +86,14 @@ const ReviewSummary = (props) => {
             Width rating:
           </strong>
           <span>
-            {widthRating[props.aveWidthRating]}
+            {`    ${widthRating[props.aveWidthRating]}`}
           </span>
         </div>
       </div>
       <div className="writeReview">
-        Write a Review
+        <span>
+          Write a Review
+        </span>
       </div>
     </div>
   );
