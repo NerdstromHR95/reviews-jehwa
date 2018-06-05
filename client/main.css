@@ -10,6 +10,7 @@ table {
 }
 .sortBy {
     vertical-align: top;
+    width: 220px;
     border: 1px solid red;
 }
 
@@ -17,6 +18,16 @@ table {
     vertical-align: top;
     width: 396px;
     border: 1px solid blue;
+}
+
+.optionForSortBy {
+    border: 1px solid red;
+    position: absolute;
+    width: 220px;
+    background-color: white;
+    z-index: 1;
+    padding: 0px;
+    margin-top: 0px;
 }
 
 ul {

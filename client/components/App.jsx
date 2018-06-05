@@ -26,7 +26,7 @@ class App extends React.Component {
       .then((res) => {
         this.setState({
           reviews: res.data,
-          filtered: res.data
+          filtered: res.data,
         });
       })
       .catch((err) => {
@@ -35,17 +35,23 @@ class App extends React.Component {
   }
 
   sortedByNumber(starNum) {
-    if(starNum === 0) {
-      let filtered = this.state.reviews;
-      this.setState({
-        filtered: filtered
-      })
-    } else {
-      let filtered = this.state.reviews.filter((review) => review.stars === starNum);
-      this.setState({
-        filtered: filtered
-      })
+
+    let filtered;
+    if (starNum === 0) {
+      filtered = this.state.reviews;
     }
+    if (starNum >= 1 && starNum <= 5) {
+      filtered = this.state.reviews.filter(review => review.stars === starNum);
+    }
+    if (starNum === 10) {
+      filtered = this.state.filtered.sort((a, b) => b.stars - a.stars);
+    }
+    if (starNum === 11) {
+      filtered = this.state.filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
+    this.setState({
+      filtered,
+    })
   }
 
   render() {
@@ -55,7 +61,7 @@ class App extends React.Component {
           ReviewSummary will be here
         </div>
         <div className="sorting" >
-          <Sorting sortedByNumber={this.sortedByNumber}/>
+          <Sorting sortedByNumber={this.sortedByNumber} />
         </div>
         <div className="reviews">
           <ReviewList reviews={this.state.filtered} />
