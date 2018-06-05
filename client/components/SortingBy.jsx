@@ -30,7 +30,7 @@ class SortingBy extends React.Component {
     };
     if (!this.state.clicked) {
       return (
-        <td >
+        <td className="sortByMain">
           <div className="sortBy" onClick={e => this.dropDown(e)}>
             { sortVal[this.state.sortVal] || 'Sort Reviews'}
           </div>
@@ -38,7 +38,7 @@ class SortingBy extends React.Component {
       );
     }
     return (
-      <td>
+      <td className="sortByMain">
         <div className="sortBy" onClick={e => this.dropDown(e)}>
           Sort Reviews
         </div>

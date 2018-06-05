@@ -91,9 +91,9 @@ const ReviewSummary = (props) => {
         </div>
       </div>
       <div className="writeReview">
-        <span>
+        <div>
           Write a Review
-        </span>
+        </div>
       </div>
     </div>
   );

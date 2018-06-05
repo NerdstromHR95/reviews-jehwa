@@ -76,7 +76,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="nerdstromReviewPage">
-        <div className="reviewSummary">
+        <div className="reviewSummaryMain">
           <ReviewSummary 
           aveStar={this.state.aveStar} 
           aveFitRating={this.state.aveFitRating} 
