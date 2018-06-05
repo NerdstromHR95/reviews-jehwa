@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 const FitRating = (props) => {
   const fitRating = {
@@ -11,8 +10,8 @@ const FitRating = (props) => {
     5: 'Large',
   };
 
-  if(props.fit) {
-    return(
+  if (props.fit) {
+    return (
       <div>
         <strong>
           Fit:
@@ -21,11 +20,10 @@ const FitRating = (props) => {
           {` ${fitRating[props.fit]}`}
         </span>
       </div>
-    )
+    );
   } return (
     <div />
-  )
-
-}
+  );
+};
 
 export default FitRating;

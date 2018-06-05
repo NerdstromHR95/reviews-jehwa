@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import FitRating from './FitRating.jsx';
 import WidthRating from './WidthRating.jsx';
 import Stars from './Stars.jsx';

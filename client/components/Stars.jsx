@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 const Stars = (props) => {
   const star = 80 * props.star / 5;

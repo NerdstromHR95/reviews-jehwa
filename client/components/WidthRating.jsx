@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 const WidthRating = (props) => {
   const widthRating = {
@@ -11,8 +10,8 @@ const WidthRating = (props) => {
     5: 'Wide',
   };
 
-  if(props.width) {
-    return(
+  if (props.width) {
+    return (
       <div>
         <strong>
           Width:
@@ -21,11 +20,10 @@ const WidthRating = (props) => {
           {` ${widthRating[props.width]}`}
         </span>
       </div>
-    )
+    );
   } return (
     <div />
-  )
-
-}
+  );
+};
 
 export default WidthRating;

@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import ReviewListEntry from './ReviewListEntry.jsx';
 
 const ReviewList = props => (
