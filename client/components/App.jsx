@@ -4,6 +4,7 @@ import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
 import Sorting from './Sorting.jsx';
 import ReviewSummary from './ReviewSummary.jsx';
+import PageSelector from './PageSelector.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class App extends React.Component {
     this.state = {
       reviews: [],
       filtered: [],
+      eachPage: [],
       sortedByStars: false,
       totalReviews: '',
     };
@@ -35,6 +37,7 @@ class App extends React.Component {
         this.setState({
           reviews: res.data,
           filtered: res.data,
+          eachPage: res.data.slice(0,5),
           aveStar: aveStar,
           aveFitRating: aveFitRating,
           aveWidthRating: aveWidthRating,
@@ -87,8 +90,11 @@ class App extends React.Component {
         <div className="sorting" >
           <Sorting sortedByNumber={this.sortedByNumber} />
         </div>
+        <div className="pageSelector">
+          <PageSelector totalPage={Math.ceil(this.state.filtered.length/5)}/>
+        </div>
         <div className="reviews">
-          <ReviewList reviews={this.state.filtered} />
+          <ReviewList reviews={this.state.eachPage} />
         </div>
       </div>
     );

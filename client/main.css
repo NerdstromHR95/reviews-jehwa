@@ -165,12 +165,7 @@ li:hover {
 
 
 /* Main Review Component */
-.reviews {
-    /* width: 620px; */
-}
-/* div.mainReviews {
-    display: block;
-} */
+
 
 div.review {
     display: block;
@@ -204,4 +199,27 @@ div.rightColumn {
 .star-ratings-css-bottom {
     color: lightgray;
     display: block;
+}
+
+/* page selector */
+.pageSelectorBody {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid red; 
+}
+
+.selectNum {
+    flex-grow: 0.5;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.selectNum span {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+path {
+    stroke: black;
 }
