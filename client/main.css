@@ -24,10 +24,11 @@
     font-size: 20px;  
 }
 
-.summaryStar {
-    display: inline-block;
-    vertical-align: top;
-    width: 25%;
+.summaryBody {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
 }
 
 .star-ratings-main {
@@ -42,27 +43,25 @@
     padding-left: 5px;
 }
 
-.summaryRating {
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 33%;
+.summaryRating span{
+    margin-left: 10px;
 }
 
 .writeReview {
-    display: inline-block;
     border: 1px solid black;
-    width: 33%;
 }
 
 .writeReview:hover {
     border: 1px solid white;
     background-color: lightgray;
+    cursor: pointer;
 }
 
 .writeReview div {
-    margin: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 63px;
+    margin-left: 63px;
     text-align: center;
 }
 
@@ -72,7 +71,6 @@
     border-bottom: 1px solid lightgray;
     margin-bottom: 5px;
     width: 100%;
-    /* height: 20%; */
 }
 
 .sortByStar {
@@ -99,7 +97,6 @@
     text-align: left;
     width: 110px;
     cursor: pointer;
-
 }
 
 ul {
