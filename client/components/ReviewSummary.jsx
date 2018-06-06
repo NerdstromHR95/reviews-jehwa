@@ -18,7 +18,7 @@ const ReviewSummary = (props) => {
     4: 'Slightly wide',
     5: 'Wide',
   };
-  const star = 150 * (props.aveStar) / 5;
+  const star = 100 * (props.aveStar) / 5;
 
   return (
     <div className="reviewSummary">
@@ -28,47 +28,15 @@ const ReviewSummary = (props) => {
       <div className="summaryStar">
         <div className="star-ratings-summary">
           <div className="star-ratings-main">
-            <div className="star-ratings-summary-top">
-              <span className="top" style={{width: star || 0}}>
-                <svg height="24" width="24">
-                  <path d="M 11.996 1.5 l 2.6 8.02 H 23 l -6.802 4.959 l 2.596 8.021 l -6.798 -4.958 L 5.198 22.5 l 2.596 -8.021 L 1 9.52 h 8.4 Z" />
-                </svg>
-                <svg height="24" width="24">
-                  <path d="M 11.996 1.5 l 2.6 8.02 H 23 l -6.802 4.959 l 2.596 8.021 l -6.798 -4.958 L 5.198 22.5 l 2.596 -8.021 L 1 9.52 h 8.4 Z" />
-                </svg>
-                <svg height="24" width="24">
-                  <path d="M 11.996 1.5 l 2.6 8.02 H 23 l -6.802 4.959 l 2.596 8.021 l -6.798 -4.958 L 5.198 22.5 l 2.596 -8.021 L 1 9.52 h 8.4 Z" />
-                </svg>
-                <svg height="24" width="24">
-                  <path d="M 11.996 1.5 l 2.6 8.02 H 23 l -6.802 4.959 l 2.596 8.021 l -6.798 -4.958 L 5.198 22.5 l 2.596 -8.021 L 1 9.52 h 8.4 Z" />
-                </svg>
-                <svg height="24" width="24">
-                  <path d="M 11.996 1.5 l 2.6 8.02 H 23 l -6.802 4.959 l 2.596 8.021 l -6.798 -4.958 L 5.198 22.5 l 2.596 -8.021 L 1 9.52 h 8.4 Z" />
-                </svg>
-              </span>
+            <div className="star-ratings-css-top" style={{width: star || 0}}>
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
             </div>
-            <div className="star-ratings-summary-bottom">
-              <span>
-                <svg height="24" width="24">
-                  <path d="M 11.996 1.5 l 2.6 8.02 H 23 l -6.802 4.959 l 2.596 8.021 l -6.798 -4.958 L 5.198 22.5 l 2.596 -8.021 L 1 9.52 h 8.4 Z" />
-                </svg>
-                <svg height="24" width="24">
-                  <path d="M 11.996 1.5 l 2.6 8.02 H 23 l -6.802 4.959 l 2.596 8.021 l -6.798 -4.958 L 5.198 22.5 l 2.596 -8.021 L 1 9.52 h 8.4 Z" />
-                </svg>
-                <svg height="24" width="24">
-                  <path d="M 11.996 1.5 l 2.6 8.02 H 23 l -6.802 4.959 l 2.596 8.021 l -6.798 -4.958 L 5.198 22.5 l 2.596 -8.021 L 1 9.52 h 8.4 Z" />
-                </svg>
-                <svg height="24" width="24">
-                  <path d="M 11.996 1.5 l 2.6 8.02 H 23 l -6.802 4.959 l 2.596 8.021 l -6.798 -4.958 L 5.198 22.5 l 2.596 -8.021 L 1 9.52 h 8.4 Z" />
-                </svg>
-                <svg height="24" width="24">
-                  <path d="M 11.996 1.5 l 2.6 8.02 H 23 l -6.802 4.959 l 2.596 8.021 l -6.798 -4.958 L 5.198 22.5 l 2.596 -8.021 L 1 9.52 h 8.4 Z" />
-                </svg>
-              </span>
+            <div className="star-ratings-css-bottom">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
             </div>
-            <span className="reviewCount">
-              {` (${props.totalReviews})`}
-            </span>
+          </div>
+          <div className="reviewCount">
+            {`(${props.totalReviews})`}
           </div>
         </div>
       </div>
@@ -78,7 +46,7 @@ const ReviewSummary = (props) => {
             Fit rating:
           </strong>
           <span>
-            {`   ${fitRating[props.aveFitRating]}`}
+            {`     ${fitRating[props.aveFitRating]}`}
           </span>
         </div>
         <div>
@@ -86,7 +54,7 @@ const ReviewSummary = (props) => {
             Width rating:
           </strong>
           <span>
-            {`    ${widthRating[props.aveWidthRating]}`}
+            {`     ${widthRating[props.aveWidthRating]}`}
           </span>
         </div>
       </div>

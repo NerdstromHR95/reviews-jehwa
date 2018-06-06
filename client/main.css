@@ -25,45 +25,21 @@
 }
 
 .summaryStar {
-    /* border: 1px solid red; */
     display: inline-block;
     vertical-align: top;
-    /* margin-left: 10px; */
-    width: 28%;
+    width: 25%;
 }
 
-.star-ratings-summary-top{
-    position: absolute;
-    overflow: hidden;
-    display: block;
-    width: 120px;
-    height: 30px;   
-}
-.top {
-    position: absolute;
-    overflow: hidden;
-}
-
-.star-ratings-summary-bottom{
-    overflow: hidden; 
+.star-ratings-main {
+    font-size: 20px;
+    width: 100px;
     display: inline-block;
-    width: 120px;
-}
-
-.star-ratings-summary-top svg {
-    fill: black;
-    overflow: hidden;
-}
-
-.star-ratings-summary-bottom svg {
-    fill: lightgray;
 }
 
 .reviewCount {
-    vertical-align: top; 
+    vertical-align: middle; 
     display: inline-block;
     padding-left: 5px;
-    padding-top: 2px;
 }
 
 .summaryRating {
@@ -72,14 +48,12 @@
     margin-left: 20px;
     margin-right: 20px;
     width: 33%;
-    /* border: 1px solid green; */
 }
 
 .writeReview {
     display: inline-block;
     border: 1px solid black;
     width: 33%;
-    /* float: right; */
 }
 
 .writeReview:hover {
