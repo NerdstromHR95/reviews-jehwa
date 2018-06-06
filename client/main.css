@@ -208,3 +208,31 @@ div.rightColumn {
     color: lightgray;
     display: block;
 }
+
+/* page selector */
+.pageSelectorBody {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border: 1px solid red; 
+}
+
+
+/* .arrow {
+    text-align: center;
+} */
+
+.selectNum {
+    flex-grow: 2;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.selectNum span {
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+path {
+    stroke: black;
+}
