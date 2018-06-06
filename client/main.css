@@ -69,7 +69,6 @@
 
 .sorting {
     border-bottom: 1px solid lightgray;
-    margin-bottom: 5px;
     width: 100%;
 }
 
@@ -167,12 +166,32 @@ li:hover {
 /* Main Review Component */
 
 
-div.review {
+.review {
     display: block;
-    /* position: relative; */
-    padding: 10px 10px 10px 10px; 
-    margin-top: 68px;
-    border: 1px solid blue;
+    padding-top: 40px; 
+    padding-bottom: 40px; 
+    border-bottom: 1px solid lightgray;
+}
+
+.reviewTitle{
+    padding-top: 10px;
+}
+
+.description {
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.ratings {
+    padding-top: 10px;
+}
+
+.ratings div {
+    padding-bottom: 5px;
+}
+
+.ratings strong {
+    padding-right: 5px;
 }
 
 div.leftColumn {
@@ -200,6 +219,7 @@ div.rightColumn {
     color: lightgray;
     display: block;
 }
+
 
 /* page selector */
 .pageSelectorBody {

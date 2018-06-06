@@ -17,7 +17,7 @@ const WidthRating = (props) => {
           Width:
         </strong>
         <span>
-          {` ${widthRating[props.width]}`}
+          {widthRating[props.width]}
         </span>
       </div>
     );

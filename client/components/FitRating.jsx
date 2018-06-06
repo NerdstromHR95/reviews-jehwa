@@ -17,7 +17,7 @@ const FitRating = (props) => {
           Fit:
         </strong>
         <span>
-          {` ${fitRating[props.fit]}`}
+          {fitRating[props.fit]}
         </span>
       </div>
     );
