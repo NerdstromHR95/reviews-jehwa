@@ -168,12 +168,7 @@ li:hover {
 
 
 /* Main Review Component */
-.reviews {
-    /* width: 620px; */
-}
-/* div.mainReviews {
-    display: block;
-} */
+
 
 div.review {
     display: block;
@@ -213,17 +208,12 @@ div.rightColumn {
 .pageSelectorBody {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     border: 1px solid red; 
 }
 
-
-/* .arrow {
-    text-align: center;
-} */
-
 .selectNum {
-    flex-grow: 2;
+    flex-grow: 0.5;
     display: flex;
     justify-content: space-evenly;
 }
