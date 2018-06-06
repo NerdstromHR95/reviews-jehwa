@@ -7,7 +7,7 @@ const ReviewListEntry = props => (
   <div className="review">
     <div className="leftColumn">
       <Stars star={props.review.stars} />
-      <div>
+      <div className="reviewTitle">
         <strong>
           {props.review.title}
         </strong>
@@ -17,10 +17,10 @@ const ReviewListEntry = props => (
       </div>
       <div className="reviewerInfo">
         <span>
-          {`${props.review.nickname} `}
+          {props.review.nickname}
         </span>
         <span>
-          Sweepstakes entry
+         {` | Sweepstakes entry`}
         </span>
       </div>
     </div>
@@ -28,8 +28,10 @@ const ReviewListEntry = props => (
       <span>
         {new Date(props.review.date).toLocaleString('en-US', { year: 'numeric', day: 'numeric', month: 'long' })}
       </span>
-      <FitRating fit={props.review.fitRating} />
-      <WidthRating width={props.review.widthRating} />
+      <div className="ratings">
+        <FitRating fit={props.review.fitRating} />
+        <WidthRating width={props.review.widthRating} />
+      </div>
     </div>
   </div>
 );
