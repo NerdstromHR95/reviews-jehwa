@@ -18,10 +18,7 @@ const reviewSchema = mongoose.Schema({
 
 const Review = mongoose.model('Review', reviewSchema);
 
-const getReviews = (itemNo) => (
-  Review.findAsync({itemNo: itemNo})
-);
-
+const getReviews = (itemNo) => Review.findAsync({itemNo: itemNo});
 
 module.exports = {
   Review,
