@@ -25,42 +25,44 @@ const ReviewSummary = (props) => {
       <div className="summaryTitle">
         REVIEWS
       </div>
-      <div className="summaryStar">
-        <div className="star-ratings-summary">
-          <div className="star-ratings-main">
-            <div className="star-ratings-css-top" style={{width: star || 0}}>
-              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+      <div className="summaryBody">
+        <div className="summaryStar">
+          <div className="star-ratings-summary">
+            <div className="star-ratings-main">
+              <div className="star-ratings-css-top" style={{width: star || 0}}>
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <div className="star-ratings-css-bottom">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
             </div>
-            <div className="star-ratings-css-bottom">
-              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            <div className="reviewCount">
+              {`(${props.totalReviews})`}
             </div>
           </div>
-          <div className="reviewCount">
-            {`(${props.totalReviews})`}
+        </div>
+        <div className="summaryRating">
+          <div>
+            <strong>
+              Fit rating:
+            </strong>
+            <span>
+              {fitRating[props.aveFitRating]}
+            </span>
+          </div>
+          <div>
+            <strong>
+              Width rating:
+            </strong>
+            <span>
+              {widthRating[props.aveWidthRating]}
+            </span>
           </div>
         </div>
-      </div>
-      <div className="summaryRating">
-        <div>
-          <strong>
-            Fit rating:
-          </strong>
-          <span>
-            {`     ${fitRating[props.aveFitRating]}`}
-          </span>
-        </div>
-        <div>
-          <strong>
-            Width rating:
-          </strong>
-          <span>
-            {`     ${widthRating[props.aveWidthRating]}`}
-          </span>
-        </div>
-      </div>
-      <div className="writeReview">
-        <div>
-          Write a Review
+        <div className="writeReview">
+          <div>
+            Write a Review
+          </div>
         </div>
       </div>
     </div>
