@@ -7,13 +7,12 @@ const PageList = (props) => {
         {props.page}
       </span>
     );
-  } 
+  }
   return (
-    <span onClick={e => props.select(e.target.innerHTML)}>
+    <span className={props.currentPage === props.page ? 'clickable active' : 'clickable'} onClick={e => props.select(e.target.innerHTML)}>
       {props.page}
     </span>
   );
-  
-};
+}
 
 export default PageList;

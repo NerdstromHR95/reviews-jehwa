@@ -7,8 +7,8 @@ const Sorting = (props) => {
     <table>
       <tbody>
         <tr>
-        <SortingByStars sortedByNumber={props.sortedByNumber}/>
-        <SortingBy sortedByNumber={props.sortedByNumber}/>
+          <SortingByStars sortedByNumber={props.sortedByNumber}/>
+          <SortingBy sortedByNumber={props.sortedByNumber}/>
         </tr>
       </tbody>
     </table>

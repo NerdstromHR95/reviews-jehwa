@@ -11,13 +11,18 @@ class App extends React.Component {
     super(props);
     this.state = {
       reviews: [],
+      timeline: [],
       filtered: [],
       eachPage: [],
       sortedByStars: false,
+      sortedByTime: false,
       totalReviews: '',
+      currentPage: 1,
     };
     this.bringData = this.bringData.bind(this);
     this.sortedByNumber = this.sortedByNumber.bind(this);
+    this.changePage = this.changePage.bind(this);
+    this.movePage = this.movePage.bind(this);
   }
 
   componentDidMount() {
@@ -37,6 +42,7 @@ class App extends React.Component {
         this.setState({
           reviews: res.data,
           filtered: res.data,
+          timeline: res.data.sort((a, b) => new Date(b.date) - new Date(a.date)),
           eachPage: res.data.slice(0,5),
           aveStar: aveStar,
           aveFitRating: aveFitRating,
@@ -51,29 +57,77 @@ class App extends React.Component {
 
   sortedByNumber(starNum) {
     let filtered;
-    if (starNum === 0) {
-      filtered = this.state.reviews;
+    if(starNum === 0) {
+      if(!this.state.sortedByTime) {
+        filtered = this.state.reviews;
+      } else {
+        filtered = this.state.timeline;
+      }
       this.setState({
         sortedByStars: false,
-      });
+      })
     }
-    if (starNum >= 1 && starNum <= 5) {
-      filtered = this.state.reviews.filter(review => review.stars === starNum);
+    if(starNum > 0 && starNum < 6) {
+      if (!this.state.sortedByTime) {
+        filtered = this.state.reviews.filter(review => review.stars === starNum);
+      } else {
+        filtered = this.state.timeline.filter(review => review.stars === starNum);
+      }
       this.setState({
         sortedByStars: true,
-      });
+      })
     }
-    if (starNum === 10 && !this.state.sortedByStars) {
-      filtered = this.state.filtered.sort((a, b) => b.stars - a.stars);
-    }
-    if (starNum === 11) {
-      filtered = this.state.filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
-    }
-    if (filtered) {
+    if(starNum === 10) {
+      if(!this.state.sortedByStars) {
+        filtered = this.state.filtered.sort((a, b) => b.stars - a.stars);
+      } else {
+        filtered = this.state.filtered;
+      }
       this.setState({
-        filtered,
-      });
+        sortedByTime: false,
+      })
     }
+    if(starNum === 11) {
+      if(this.state.sortedByStars) {
+        filtered = this.state.filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+        this.setState({
+          sortedBy: true,
+        })
+      } else {
+        filtered = this.state.timeline;
+      }
+      this.setState({
+        sortedByTime: true,
+      })
+
+    }
+    this.setState({
+      filtered: filtered,
+      eachPage: filtered.slice(0,5),
+      currentPage: 1,
+    })
+  }
+
+  changePage(pageNum) {
+    let pageView = this.state.filtered.slice((5 * (pageNum - 1)), 5 * pageNum);
+    this.setState({
+      eachPage: pageView,
+      currentPage: pageNum
+    })
+  }
+
+  movePage(direction) {
+    console.log(direction);
+    let newPage;
+    if(direction === 'previous') {
+      newPage = this.state.currentPage - 1;
+    } else {
+      newPage = this.state.currentPage + 1;
+    }
+    this.setState({
+      currentPage: newPage,
+      eachPage: this.state.filtered.slice((5 * (newPage - 1)), 5 * newPage)
+    })
   }
 
   render() {
@@ -90,11 +144,16 @@ class App extends React.Component {
         <div className="sorting" >
           <Sorting sortedByNumber={this.sortedByNumber} />
         </div>
-        <div className="pageSelector">
-          <PageSelector totalPage={Math.ceil(this.state.filtered.length/5)}/>
-        </div>
         <div className="reviews">
           <ReviewList reviews={this.state.eachPage} />
+        </div>
+        <div className="pageSelector">
+          <PageSelector 
+          currentPage={this.state.currentPage} 
+          totalPage={Math.ceil(this.state.filtered.length/5)} 
+          changePage={this.changePage}
+          movePage={this.movePage}
+          />
         </div>
       </div>
     );
