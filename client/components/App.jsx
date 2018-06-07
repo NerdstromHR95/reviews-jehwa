@@ -15,6 +15,7 @@ class App extends React.Component {
       eachPage: [],
       sortedByStars: false,
       totalReviews: '',
+      currentPage: 1,
     };
     this.bringData = this.bringData.bind(this);
     this.sortedByNumber = this.sortedByNumber.bind(this);
@@ -72,7 +73,9 @@ class App extends React.Component {
     }
     if (filtered) {
       this.setState({
-        filtered,
+        filtered: filtered,
+        eachPage: filtered.slice(0,5),
+        currentPage: 1
       });
     }
   }
@@ -80,7 +83,8 @@ class App extends React.Component {
   changePage(pageNum) {
     let pageView = this.state.filtered.slice((5 * (pageNum - 1)), 5 * pageNum);
     this.setState({
-      eachPage: pageView
+      eachPage: pageView,
+      currentPage: pageNum
     })
   }
 
@@ -99,7 +103,7 @@ class App extends React.Component {
           <Sorting sortedByNumber={this.sortedByNumber} />
         </div>
         <div className="pageSelector">
-          <PageSelector totalPage={Math.ceil(this.state.filtered.length/5)} changePage={this.changePage}/>
+          <PageSelector currentPage={this.state.currentPage} totalPage={Math.ceil(this.state.filtered.length/5)} changePage={this.changePage}/>
         </div>
         <div className="reviews">
           <ReviewList reviews={this.state.eachPage} />
