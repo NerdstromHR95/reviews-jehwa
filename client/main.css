@@ -34,8 +34,8 @@
 
 .star-ratings-main {
     font-size: 20px;
-    width: 100px;
     display: inline-block;
+    position: relative;
 }
 
 .reviewCount {
@@ -226,9 +226,13 @@ div.rightColumn {
     font-size: 90%;
 }
 
+.star-ratings-css {
+    width: 70px;
+    position: relative;
+}
+
 .star-ratings-css-top {
     position: absolute;
-    width: 80px;
     overflow: hidden;
     color: black;
     display: block;

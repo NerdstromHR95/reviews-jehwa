@@ -14,6 +14,7 @@ class App extends React.Component {
       filtered: [],
       eachPage: [],
       sortedByStars: false,
+      sortedBy: false,
       totalReviews: '',
       currentPage: 1,
     };
@@ -60,8 +61,14 @@ class App extends React.Component {
         sortedByStars: false,
       });
     }
-    if (starNum >= 1 && starNum <= 5) {
+    if (starNum >= 1 && starNum <= 5 && !this.state.sortedBy) {
       filtered = this.state.reviews.filter(review => review.stars === starNum);
+      this.setState({
+        sortedByStars: true,
+      });
+    }
+    if (starNum >= 1 && starNum <= 5 && this.state.sortedBy) {
+      filtered = this.state.filtered.filter(review => review.stars === starNum);
       this.setState({
         sortedByStars: true,
       });
@@ -71,6 +78,9 @@ class App extends React.Component {
     }
     if (starNum === 11) {
       filtered = this.state.filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+      this.setState({
+        sortedBy: true,
+      })
     }
     if (filtered) {
       this.setState({
