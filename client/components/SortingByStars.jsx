@@ -4,21 +4,13 @@ class SortingByStars extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clicked: false,
       star: '',
     };
-    this.dropdown = this.dropdown.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
   }
 
-  dropdown(e) {
-    this.setState({
-      clicked: !this.state.clicked,
-    });
-  }
-
   clickHandler(e) {
-    this.state.clicked = !this.state.clicked;
+    this.props.clicked('star');
     this.setState({
       star: e.target.value
     }, () => this.props.sortedByNumber(this.state.star))
@@ -34,10 +26,10 @@ class SortingByStars extends React.Component {
       5: "5 star"
     }
 
-    if (!this.state.clicked) {
+    if (!this.props.status) {
       return (
         <td className="sortByStar">
-          <div className="sortStar-before" onClick={e => this.dropdown(e)}>
+          <div className="sortStar-before" onClick={e => this.props.clicked('star')}>
             {divVal[this.state.star] || `Star Rating`}
             <span className="smallArrow">
               <svg height="7" width="12">
@@ -50,7 +42,7 @@ class SortingByStars extends React.Component {
     }
     return (
       <td className="sortByStar">
-        <div className="sortStar-after" onClick={e => this.dropdown(e)}>
+        <div className="sortStar-after" onClick={e => this.props.clicked('star')}>
           Star Rating
           <span className="smallArrow">
             <svg height="7" width="12">
