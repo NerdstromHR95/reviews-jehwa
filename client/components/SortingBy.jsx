@@ -33,6 +33,11 @@ class SortingBy extends React.Component {
         <td className="sortByMain">
           <div className="sortBy" onClick={e => this.dropDown(e)}>
             { sortVal[this.state.sortVal] || 'Sort Reviews'}
+            <span className="smallArrow">
+              <svg height="7" width="12">
+                <path d="M 6.002 6 L 1 1 m 5.002 5 L 11 1.002" />
+              </svg>
+            </span>
           </div>
         </td>
       );
@@ -41,6 +46,11 @@ class SortingBy extends React.Component {
       <td className="sortByMain">
         <div className="sortBy" onClick={e => this.dropDown(e)}>
           Sort Reviews
+          <span className="smallArrow">
+            <svg height="7" width="12">
+              <path d="M 5.998 1 L 11 6 M 5.998 1 L 1 5.998" />
+            </svg>
+          </span>
         </div>
         <ul className="optionForSortBy" onClick={e => this.clickHandler(e)}>
           <li value="10"> Star Rating </li>

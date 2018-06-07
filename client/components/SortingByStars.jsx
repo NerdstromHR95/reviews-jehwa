@@ -39,6 +39,11 @@ class SortingByStars extends React.Component {
         <td className="sortByStar">
           <div className="sortStar-before" onClick={e => this.dropdown(e)}>
             {divVal[this.state.star] || `Star Rating`}
+            <span className="smallArrow">
+              <svg height="7" width="12">
+                <path d="M 6.002 6 L 1 1 m 5.002 5 L 11 1.002" />
+              </svg>
+            </span>
           </div>
         </td>
       );
@@ -47,6 +52,11 @@ class SortingByStars extends React.Component {
       <td className="sortByStar">
         <div className="sortStar-after" onClick={e => this.dropdown(e)}>
           Star Rating
+          <span className="smallArrow">
+            <svg height="7" width="12">
+              <path d="M 5.998 1 L 11 6 M 5.998 1 L 1 5.998" />
+            </svg>
+          </span>          
         </div>
         <ul className="options" onClick={e => this.clickHandler(e)}>
           <li value="0"> All stars</li>
