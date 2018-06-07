@@ -38,11 +38,12 @@ class App extends React.Component {
         let aveFitRating = Math.round(validFitRatings.reduce((acc, val) => (acc + val.fitRating),0)/validFitRatings.length);
         let validWidthRatings = res.data.filter((review) => review.widthRating > 0);
         let aveWidthRating = Math.round(validWidthRatings.reduce((acc, val) => (acc + val.widthRating),0)/validWidthRatings.length);
+        let timeline = res.data.slice().sort((a,b) => new Date(b.date) - new Date(a.date));
 
         this.setState({
-          reviews: res.data,
-          filtered: res.data,
-          timeline: res.data.sort((a, b) => new Date(b.date) - new Date(a.date)),
+          reviews: res.data.slice(),
+          filtered: res.data.slice(),
+          timeline: timeline,
           eachPage: res.data.slice(0,5),
           aveStar: aveStar,
           aveFitRating: aveFitRating,
@@ -61,7 +62,7 @@ class App extends React.Component {
       if(!this.state.sortedByTime) {
         filtered = this.state.reviews;
       } else {
-        filtered = this.state.timeline;
+        filtered = this.state.timeline.slice();
       }
       this.setState({
         sortedByStars: false,
@@ -94,7 +95,7 @@ class App extends React.Component {
           sortedBy: true,
         })
       } else {
-        filtered = this.state.timeline;
+        filtered = this.state.timeline.slice();
       }
       this.setState({
         sortedByTime: true,
@@ -117,7 +118,6 @@ class App extends React.Component {
   }
 
   movePage(direction) {
-    console.log(direction);
     let newPage;
     if(direction === 'previous') {
       newPage = this.state.currentPage - 1;

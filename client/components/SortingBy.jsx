@@ -4,21 +4,14 @@ class SortingBy extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clicked: false,
       sortVal: '',
     };
-    this.dropDown = this.dropDown.bind(this);
     this.clickHandler = this.clickHandler.bind(this);
   }
 
-  dropDown(e) {
-    this.setState({
-      clicked: !this.state.clicked,
-    });
-  }
   clickHandler(e) {
+    this.props.clicked();
     this.setState({
-      clicked: !this.state.clicked,
       sortVal: e.target.value,
     }, () => this.props.sortedByNumber(this.state.sortVal));
   }
@@ -28,10 +21,10 @@ class SortingBy extends React.Component {
       10: 'Star Rating',
       11: 'Submission Time',
     };
-    if (!this.state.clicked) {
+    if (!this.props.status) {
       return (
         <td className="sortByMain">
-          <div className="sortBy" onClick={e => this.dropDown(e)}>
+          <div className="sortBy" onClick={() => this.props.clicked()}>
             { sortVal[this.state.sortVal] || 'Sort Reviews'}
             <span className="smallArrow">
               <svg height="7" width="12">
@@ -44,7 +37,7 @@ class SortingBy extends React.Component {
     }
     return (
       <td className="sortByMain">
-        <div className="sortBy" onClick={e => this.dropDown(e)}>
+        <div className="sortBy" onClick={() => this.props.clicked()}>
           Sort Reviews
           <span className="smallArrow">
             <svg height="7" width="12">
