@@ -265,13 +265,21 @@ path {
     text-decoration: underline;
 }
 
+
 .clickable:hover {
     cursor: pointer;
     text-decoration: underline;
 }
+.clickable {
+    height: 24px;
+    width: 24px;
+    text-align: center;
+}
 
 .active {
-    color: red;
     cursor: default !important;
     text-decoration: none !important;
+    border-radius: 50%;
+    background-color:rgb(240, 239, 239);
+    font-weight: bold;
 }
