@@ -117,6 +117,9 @@ class App extends React.Component {
         <div className="sorting" >
           <Sorting sortedByNumber={this.sortedByNumber} />
         </div>
+        <div className="reviews">
+          <ReviewList reviews={this.state.eachPage} />
+        </div>
         <div className="pageSelector">
           <PageSelector 
           currentPage={this.state.currentPage} 
@@ -124,9 +127,6 @@ class App extends React.Component {
           changePage={this.changePage}
           movePage={this.movePage}
           />
-        </div>
-        <div className="reviews">
-          <ReviewList reviews={this.state.eachPage} />
         </div>
       </div>
     );
