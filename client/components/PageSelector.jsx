@@ -5,7 +5,7 @@ class PageSelector extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: 2,
+      currentPage: 1,
     };
     this.pageList = this.pageList.bind(this);
     this.pageSelect = this.pageSelect.bind(this);
@@ -33,6 +33,7 @@ class PageSelector extends React.Component {
   }
 
   pageSelect(num) {
+    this.props.changePage(Number(num));
     this.setState({
       currentPage: Number(num),
     });
@@ -44,7 +45,7 @@ class PageSelector extends React.Component {
       1: 'hidden',
     };
     const nextVisibility = {
-      [this.props.totalPage]: 'hidden',
+      [this.props.totalPage || 1]: 'hidden',
     };
     return (
       <div className="pageSelectorBody">
