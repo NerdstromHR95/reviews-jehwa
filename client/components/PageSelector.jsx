@@ -34,9 +34,6 @@ class PageSelector extends React.Component {
 
   pageSelect(num) {
     this.props.changePage(Number(num));
-    // this.setState({
-    //   currentPage: Number(num),
-    // });
   }
 
 
@@ -49,7 +46,11 @@ class PageSelector extends React.Component {
     };
     return (
       <div className="pageSelectorBody">
-        <div style={{ visibility: visibility[this.props.currentPage] || null }}>
+        <div
+          className="previous"
+          style={{ visibility: visibility[this.props.currentPage] || null }}
+          onClick={() => this.props.movePage('previous')}
+        >
           <svg height="24" width="13">
             <path d="M 1 12 l 11 11 m 0 -22 L 1 12" />
           </svg>
@@ -58,9 +59,13 @@ class PageSelector extends React.Component {
           </span>
         </div>
         <div className="selectNum">
-          {this.pageList().map((num, index) => <PageList page={num} key={index} select={this.pageSelect} />)}
+          {this.pageList().map((num, index) => <PageList page={num} key={index} select={this.pageSelect} currentPage={this.props.currentPage} />)}
         </div>
-        <div style={{ visibility: nextVisibility[this.props.currentPage] || null }}>
+        <div
+          className="next"
+          style={{ visibility: nextVisibility[this.props.currentPage] || null }}
+          onClick={() => this.props.movePage()}
+        >
           <span>
             NEXT
           </span>

@@ -3,9 +3,9 @@
 
 .nerdstromReviewPage {
     border: 1px solid black;
-    font-family: 'Brandon Text';
+    font-family: Lato;
     font-weight: normal;
-    line-height: 1.4;
+    line-height: 1.2;
     width: 100%;
 }
 
@@ -21,7 +21,8 @@
 .summaryTitle {
     margin-top: 10px;
     margin-bottom: 20px;  
-    font-size: 20px;  
+    font-size: 25px; 
+    font-weight: bold; 
 }
 
 .summaryBody {
@@ -41,14 +42,19 @@
     vertical-align: middle; 
     display: inline-block;
     padding-left: 5px;
+    font-size: 15px;
 }
 
+.summaryRating {
+    font-size: 14px;
+}
 .summaryRating span{
     margin-left: 10px;
 }
 
 .writeReview {
     border: 1px solid black;
+    font-size: 15px;
 }
 
 .writeReview:hover {
@@ -100,7 +106,6 @@
 
 ul {
     list-style-type: none;
-    /* border-bottom: 1px solid lightgray; */
 }
 
 li {
@@ -242,4 +247,31 @@ div.rightColumn {
 
 path {
     stroke: black;
+}
+
+.previous:hover {
+    cursor: pointer;
+}
+
+.previous span:hover {
+    text-decoration: underline;
+}
+
+.next:hover {
+    cursor: pointer;
+}
+
+.next span:hover {
+    text-decoration: underline;
+}
+
+.clickable:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.active {
+    color: red;
+    cursor: default !important;
+    text-decoration: none !important;
 }

@@ -20,6 +20,7 @@ class App extends React.Component {
     this.bringData = this.bringData.bind(this);
     this.sortedByNumber = this.sortedByNumber.bind(this);
     this.changePage = this.changePage.bind(this);
+    this.movePage = this.movePage.bind(this);
   }
 
   componentDidMount() {
@@ -88,6 +89,20 @@ class App extends React.Component {
     })
   }
 
+  movePage(direction) {
+    console.log(direction);
+    let newPage;
+    if(direction === 'previous') {
+      newPage = this.state.currentPage - 1;
+    } else {
+      newPage = this.state.currentPage + 1;
+    }
+    this.setState({
+      currentPage: newPage,
+      eachPage: this.state.filtered.slice((5 * (newPage - 1)), 5 * newPage)
+    })
+  }
+
   render() {
     return (
       <div className="nerdstromReviewPage">
@@ -103,7 +118,12 @@ class App extends React.Component {
           <Sorting sortedByNumber={this.sortedByNumber} />
         </div>
         <div className="pageSelector">
-          <PageSelector currentPage={this.state.currentPage} totalPage={Math.ceil(this.state.filtered.length/5)} changePage={this.changePage}/>
+          <PageSelector 
+          currentPage={this.state.currentPage} 
+          totalPage={Math.ceil(this.state.filtered.length/5)} 
+          changePage={this.changePage}
+          movePage={this.movePage}
+          />
         </div>
         <div className="reviews">
           <ReviewList reviews={this.state.eachPage} />
