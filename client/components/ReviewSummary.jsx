@@ -18,7 +18,7 @@ const ReviewSummary = (props) => {
     4: 'Slightly wide',
     5: 'Wide',
   };
-  const star = (props.aveStar) / 5 * 100;
+  const star = ((props.aveStar) / 5 * 100) || 0 ;
 
   return (
     <div className="reviewSummary">
@@ -29,7 +29,7 @@ const ReviewSummary = (props) => {
         <div className="summaryStar">
           <div className="star-ratings-summary">
             <div className="star-ratings-main">
-              <div className="star-ratings-css-top" style={{width: `${star}%` || 0}}>
+              <div className="star-ratings-css-top" style={{width: `${star}%`}}>
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
               <div className="star-ratings-css-bottom">
@@ -37,7 +37,7 @@ const ReviewSummary = (props) => {
               </div>
             </div>
             <div className="reviewCount">
-              {`(${props.totalReviews})`}
+              {props.totalReviews}
             </div>
           </div>
         </div>
