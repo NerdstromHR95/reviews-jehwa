@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import ReviewList from './ReviewList.jsx';
 import Sorting from './Sorting.jsx';
@@ -30,7 +29,8 @@ class App extends React.Component {
   }
 
   bringData() {
-    axios.get('/1/init')
+    let itemNumber = window.location.pathname.split('/')[1];
+    axios.get(`/${itemNumber}/init`)
       .then((res) => {
         let validStars = res.data.filter((review) => review.stars > 0);
         let aveStar = validStars.reduce((acc, val) => (acc + val.stars),0)/validStars.length;
@@ -160,5 +160,3 @@ class App extends React.Component {
   }
 }
 export default App;
-
-ReactDOM.render(<App />, document.getElementById('app'));
