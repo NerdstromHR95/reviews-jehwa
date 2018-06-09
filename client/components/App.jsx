@@ -29,7 +29,8 @@ class App extends React.Component {
   }
 
   bringData() {
-    axios.get('/99/init')
+    let itemNumber = window.location.pathname.split('/')[1];
+    axios.get(`/${itemNumber}/init`)
       .then((res) => {
         let validStars = res.data.filter((review) => review.stars > 0);
         let aveStar = validStars.reduce((acc, val) => (acc + val.stars),0)/validStars.length;

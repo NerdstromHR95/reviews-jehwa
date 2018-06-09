@@ -5,7 +5,8 @@ const db = require('../db/index.js');
 const app = express();
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '/../public')));
+
+app.use('/:itemNo', express.static(path.join(__dirname, '/../public')));
 
 app.get('/:itemNo/init', (req, res) => {
   const itemNo = req.url.split('/')[1];
