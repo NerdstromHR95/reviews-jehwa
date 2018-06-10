@@ -18,9 +18,19 @@ const reviewSchema = mongoose.Schema({
 
 const Review = mongoose.model('Review', reviewSchema);
 
-const getReviews = (itemNo) => Review.findAsync({itemNo: itemNo});
+const getReviews = itemNo => Review.findAsync({ itemNo });
+
+const filterByStar = (itemNo, starNo, sortedByTime) => {
+
+  if (sortedByTime === 'true') {
+    return Review.find({ itemNo, stars: starNo }).sort('-date');
+  }
+  return Review.findAsync({ itemNo, stars: starNo });
+};
+
 
 module.exports = {
   Review,
   getReviews,
+  filterByStar,
 };
