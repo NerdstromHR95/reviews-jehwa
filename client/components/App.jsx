@@ -84,14 +84,20 @@ class App extends React.Component {
           });
       })
     }
-    if(starNum === 10 && this.state.filteredByStar === 0) {
-      filtered = this.state.reviews.slice().sort((a,b) => b.stars - a.stars);
-      this.setState({
-        filtered: filtered,
-        eachPage: filtered.slice(0,5),
-        currentPage: 1,
-        sortedByTime: false,
-      })
+    if(starNum === 10) {
+      if(this.state.filteredByStar === 0) {
+        filtered = this.state.reviews.slice().sort((a,b) => b.stars - a.stars);
+        this.setState({
+          filtered: filtered,
+          eachPage: filtered.slice(0,5),
+          currentPage: 1,
+          sortedByTime: false,
+        })
+      } else {
+        this.setState({
+          sortedByTime: false,
+        })
+      }
     }
     if(starNum === 11) {
       if(this.state.filteredByStar === 0) {
