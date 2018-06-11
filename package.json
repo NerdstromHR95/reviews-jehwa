@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "webpack -d --watch",
     "start": "nodemon ./server/index.js",
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "axios": "^0.18.0",
