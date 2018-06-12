@@ -9,7 +9,7 @@ module.exports = {
   entry: `${CLI_DIR}/index.js`,
   output: {
     path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js',
+    filename: 'review-bundle.js',
   },
   module: {
     rules: [
