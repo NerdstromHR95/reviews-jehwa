@@ -1,6 +1,5 @@
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
 
 const CLI_DIR = path.join(__dirname, '/client');
 
@@ -21,28 +20,12 @@ module.exports = {
         },
       },
       {
-        test: /\.html$/,
-        use: [
-          {
-            loader: 'html-loader',
-            options: { minimize: true },
-          },
-        ],
-      },
-      {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [
+          {loader: "style-loader"},
+          {loader:"css-loader"}
+        ],
       },
     ],
   },
-  plugins: [
-    new HtmlWebPackPlugin({
-      template: './client/index.html',
-      filename: './index.html',
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
-  ],
 };
