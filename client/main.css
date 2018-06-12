@@ -85,7 +85,7 @@
     padding-bottom: 15px;
 }
 
-:local(.sortStar-before) {
+:local(.sortStarBefore) {
     border-top: 2px solid gray;
     text-align: left;
     width: 110px;
@@ -97,7 +97,7 @@
     justify-content: space-between;
 
 }
-:local(.sortStar-after) {
+:local(.sortStarAfter) {
     border: 1px solid #e3e3e3;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -113,11 +113,11 @@
     padding-right: 5px;
 }
 
-:local(ul) {
+ul {
     list-style-type: none;
 }
 
-:local(li) {
+li {
     border-bottom: 1px solid #e3e3e3;
     border-right: 1px solid #e3e3e3;
     border-left: 1px solid #e3e3e3;
@@ -131,7 +131,7 @@
     cursor: pointer;
 }
 
-:local(li:hover) {
+li:hover {
     border-bottom: 2px solid #e3e3e3;
 }
 

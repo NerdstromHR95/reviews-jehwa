@@ -158,7 +158,7 @@ class App extends React.Component {
             totalReviews={this.state.totalReviews}
           />
         </div>
-        <div className="sorting" >
+        <div className={styles.sorting} >
           <Sorting sortedByNumber={this.sortedByNumber} />
         </div>
         <div className="reviews">

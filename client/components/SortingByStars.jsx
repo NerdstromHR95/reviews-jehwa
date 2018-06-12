@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from '../main.css'
+
 
 class SortingByStars extends React.Component {
   constructor(props) {
@@ -28,10 +30,10 @@ class SortingByStars extends React.Component {
 
     if (!this.props.status) {
       return (
-        <td className="sortByStar">
-          <div className="sortStar-before" onClick={e => this.props.clicked('star')}>
+        <td className={styles.sortByStar}>
+          <div className={styles.sortStarBefore} onClick={e => this.props.clicked('star')}>
             {divVal[this.state.star] || `Star Rating`}
-            <span className="smallArrow">
+            <span className={styles.smallArrow}>
               <svg height="7" width="12">
                 <path d="M 6.002 6 L 1 1 m 5.002 5 L 11 1.002" />
               </svg>
@@ -41,16 +43,16 @@ class SortingByStars extends React.Component {
       );
     }
     return (
-      <td className="sortByStar">
-        <div className="sortStar-after" onClick={e => this.props.clicked('star')}>
+      <td className={styles.sortByStar}>
+        <div className={styles.sortStarAfter} onClick={e => this.props.clicked('star')}>
           Star Rating
-          <span className="smallArrow">
+          <span className={styles.smallArrow}>
             <svg height="7" width="12">
               <path d="M 5.998 1 L 11 6 M 5.998 1 L 1 5.998" />
             </svg>
           </span>          
         </div>
-        <ul className="options" onClick={e => this.clickHandler(e)}>
+        <ul className={styles.options} onClick={e => this.clickHandler(e)}>
           <li value="0"> All stars</li>
           <li value="1"> 1 star </li>
           <li value="2"> 2 star </li>

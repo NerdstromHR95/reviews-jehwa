@@ -1,13 +1,14 @@
 import React from 'react';
+import styles from '../main.css'
 
 const Stars = (props) => {
   const star = props.star / 5 * 100;
   return (
-      <div className="star-ratings-css">
-        <div className="star-ratings-css-top" style={{width: `${star}%`}}>
+      <div className={styles.starRatingsCss}>
+        <div className={styles.starRatingsCssTop} style={{width: `${star}%`}}>
           <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
         </div>
-        <div className="star-ratings-css-bottom">
+        <div className={styles.starRatingsCssBottom}>
           <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
         </div>
       </div>
