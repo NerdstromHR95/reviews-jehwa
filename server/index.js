@@ -6,19 +6,19 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/:itemNo', express.static(path.join(__dirname, '/../public')));
+app.use('/:itemNo/reviews', express.static(path.join(__dirname, '/../public')));
 
-app.get('/:itemNo/init', (req, res) => {
+app.get('/:itemNo/reviews/init', (req, res) => {
   const itemNo = req.url.split('/')[1];
   db.getReviews(itemNo)
     .then(data => res.send(data));
 });
 
-app.get('/:itemNo/filter/:starNo/:sortedByTime', (req, res) => {
+app.get('/:itemNo/reviews/filter/:starNo/:sortedByTime', (req, res) => {
   const urlSplit = req.url.split('/')
   const itemNo = urlSplit[1];
-  const starNo = urlSplit[3];
-  const sortedByTime = urlSplit[4];
+  const starNo = urlSplit[4];
+  const sortedByTime = urlSplit[5];
   db.filterByStar(itemNo, starNo, sortedByTime)
     .then(data => res.send(data))
     .catch(err => res.statusCode(500).send(err));

@@ -30,7 +30,7 @@ class App extends React.Component {
 
   bringData() {
     const itemNumber = window.location.pathname.split('/')[1];
-    axios.get(`/${itemNumber}/init`)
+    axios.get(`/${itemNumber}/reviews/init`)
       .then((res) => {
         const validStars = res.data.filter(review => review.stars > 0);
         const aveStar = validStars.reduce((acc, val) => (acc + val.stars), 0) / validStars.length;
@@ -74,7 +74,7 @@ class App extends React.Component {
       this.setState({
         filteredByStar: starNum,
       }, () => {
-        axios.get(`/${this.state.itemNo}/filter/${this.state.filteredByStar}/${this.state.sortedByTime}`)
+        axios.get(`/${this.state.itemNo}/reviews/filter/${this.state.filteredByStar}/${this.state.sortedByTime}`)
           .then((res) => {
             this.setState({
               filtered: res.data,
@@ -112,7 +112,7 @@ class App extends React.Component {
         this.setState({
           sortedByTime: true,
         }, () => {
-          axios.get(`/${this.state.itemNo}/filter/${this.state.filteredByStar}/${this.state.sortedByTime}`)
+          axios.get(`/${this.state.itemNo}/reviews/filter/${this.state.filteredByStar}/${this.state.sortedByTime}`)
             .then((res) => {
               this.setState({
                 filtered: res.data,
