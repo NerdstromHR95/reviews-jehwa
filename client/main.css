@@ -71,6 +71,10 @@
     text-align: center;
 }
 
+:local(.reviewerInfo) {
+    font-size: 90%;
+}
+
 /* Review Sorting Component */
 
 :local(.sorting) {
