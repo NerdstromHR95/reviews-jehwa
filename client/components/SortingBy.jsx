@@ -48,8 +48,8 @@ class SortingBy extends React.Component {
           </span>
         </div>
         <ul className={styles.optionForSortBy} onClick={e => this.clickHandler(e)}>
-          <li value="10"> Star Rating </li>
-          <li value="11"> Submission Time</li>
+          <li className={styles.list} value="10"> Star Rating </li>
+          <li className={styles.list} value="11"> Submission Time</li>
         </ul>
       </td>
     );

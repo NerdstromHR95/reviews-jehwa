@@ -53,12 +53,12 @@ class SortingByStars extends React.Component {
           </span>          
         </div>
         <ul className={styles.options} onClick={e => this.clickHandler(e)}>
-          <li value="0"> All stars</li>
-          <li value="1"> 1 star </li>
-          <li value="2"> 2 star </li>
-          <li value="3"> 3 star </li>
-          <li value="4"> 4 star </li>
-          <li value="5"> 5 star </li>
+          <li className={styles.list} value="0"> All stars</li>
+          <li className={styles.list} value="1"> 1 star </li>
+          <li className={styles.list} value="2"> 2 star </li>
+          <li className={styles.list} value="3"> 3 star </li>
+          <li className={styles.list} value="4"> 4 star </li>
+          <li className={styles.list} value="5"> 5 star </li>
         </ul>
       </td>
     );

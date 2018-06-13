@@ -121,7 +121,7 @@ ul {
     list-style-type: none;
 }
 
-li {
+:local(.list) {
     border-bottom: 1px solid #e3e3e3;
     border-right: 1px solid #e3e3e3;
     border-left: 1px solid #e3e3e3;
@@ -135,7 +135,7 @@ li {
     cursor: pointer;
 }
 
-li:hover {
+:local(.list:hover) {
     border-bottom: 2px solid #e3e3e3;
 }
 
