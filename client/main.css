@@ -300,17 +300,17 @@ li:hover {
 }
 
 
-:local(.clickable:hover) {
+.clickable:hover {
     cursor: pointer;
     text-decoration: underline;
 }
-:local(.clickable) {
+.clickable {
     height: 24px;
     width: 24px;
     text-align: center;
 }
 
-:local(.active) {
+.active {
     cursor: default !important;
     text-decoration: none !important;
     border-radius: 50%;

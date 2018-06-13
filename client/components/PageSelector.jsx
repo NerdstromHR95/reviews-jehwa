@@ -1,5 +1,7 @@
 import React from 'react';
 import PageList from './PageList.jsx';
+import styles from '../main.css'
+
 
 class PageSelector extends React.Component {
   constructor(props) {
@@ -45,9 +47,9 @@ class PageSelector extends React.Component {
       [this.props.totalPage || 1]: 'hidden',
     };
     return (
-      <div className="pageSelectorBody">
+      <div className={styles.pageSelectorBody}>
         <div
-          className="previous"
+          className={styles.previous}
           style={{ visibility: visibility[this.props.currentPage] || null }}
           onClick={() => this.props.movePage('previous')}
         >
@@ -58,11 +60,11 @@ class PageSelector extends React.Component {
             PREVIOUS
           </span>
         </div>
-        <div className="selectNum">
+        <div className={styles.selectNum}>
           {this.pageList().map((num, index) => <PageList page={num} key={index} select={this.pageSelect} currentPage={this.props.currentPage} />)}
         </div>
         <div
-          className="next"
+          className={styles.next}
           style={{ visibility: nextVisibility[this.props.currentPage] || null }}
           onClick={() => this.props.movePage()}
         >
