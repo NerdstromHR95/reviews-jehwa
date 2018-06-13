@@ -30,7 +30,7 @@ class SortingBy extends React.Component {
             { sortVal[this.state.sortVal] || 'Sort Reviews'}
             <span className={styles.smallArrow}>
               <svg height="7" width="12">
-                <path d="M 6.002 6 L 1 1 m 5.002 5 L 11 1.002" />
+                <path className={styles.arrow} d="M 6.002 6 L 1 1 m 5.002 5 L 11 1.002" />
               </svg>
             </span>
           </div>
@@ -43,7 +43,7 @@ class SortingBy extends React.Component {
           Sort Reviews
           <span className={styles.smallArrow}>
             <svg height="7" width="12">
-              <path d="M 5.998 1 L 11 6 M 5.998 1 L 1 5.998" />
+              <path className={styles.arrow} d="M 5.998 1 L 11 6 M 5.998 1 L 1 5.998" />
             </svg>
           </span>
         </div>

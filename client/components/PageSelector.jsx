@@ -54,7 +54,7 @@ class PageSelector extends React.Component {
           onClick={() => this.props.movePage('previous')}
         >
           <svg height="24" width="13">
-            <path d="M 1 12 l 11 11 m 0 -22 L 1 12" />
+            <path className={styles.arrow} d="M 1 12 l 11 11 m 0 -22 L 1 12" />
           </svg>
           <span>
             PREVIOUS
@@ -72,7 +72,7 @@ class PageSelector extends React.Component {
             NEXT
           </span>
           <svg height="24" width="13">
-            <path d="M 12 12 L 1 1 m 0 22 l 11 -11" />
+            <path className={styles.arrow} d="M 12 12 L 1 1 m 0 22 l 11 -11" />
           </svg>
         </div>
       </div>
