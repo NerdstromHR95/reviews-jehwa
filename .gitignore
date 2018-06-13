@@ -4,8 +4,8 @@
 ##npm packages
 node_modules/
 
-##webpack output folder
-public/
+##webpack output bundle
+review-bundle.js
 
 ##vscode
 .vscode/
