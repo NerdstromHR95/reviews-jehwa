@@ -1,70 +1,70 @@
 
 /* Review module */
 
-.nerdstromReviewPage {
+:local(.nerdstromReviewPage) {
     /* border: 1px solid black; */
     font-family: Lato;
     font-weight: normal;
     line-height: 1.2;
-    width: 100%;
+    width: 80%;
 }
 
 /* Review Summary Component */
 
-.reviewSummary {
+:local(.reviewSummary) {
     border-bottom: 1px solid #e3e3e3;
     padding-bottom: 10px;
     width: 100%;
     height: 20%;
 }
 
-.summaryTitle {
+:local(.summaryTitle ){
     margin-top: 10px;
     margin-bottom: 20px;  
     font-size: 25px; 
     font-weight: bold; 
 }
 
-.summaryBody {
+:local(.summaryBody) {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 
 }
 
-.star-ratings-main {
+:local(.starRatingsMain) {
     font-size: 20px;
     display: inline-block;
     position: relative;
 }
 
-.reviewCount {
+:local(.reviewCount) {
     vertical-align: middle; 
     display: inline-block;
     padding-left: 5px;
     font-size: 15px;
 }
 
-.summaryRating {
+:local(.summaryRating) {
     font-size: 14px;
 }
-.summaryRating span{
+:local(.summaryRatingVal){
     margin-left: 10px;
 }
 
-.writeReview {
+:local(.writeReview) {
     border: 1px solid black;
     font-size: 15px;
 }
 
-.writeReview:hover {
+:local(.writeReview:hover) {
     border: 1px solid white;
     background-color: #e3e3e3;
     cursor: pointer;
 }
 
-.writeReview div {
-    margin-top: 8px;
+:local(.writeReviewVal) {
+    margin-top: 10px;
     margin-bottom: 8px;
     margin-right: 63px;
     margin-left: 63px;
@@ -73,19 +73,19 @@
 
 /* Review Sorting Component */
 
-.sorting {
+:local(.sorting) {
     border-bottom: 1px solid #e3e3e3;
     width: 100%;
     font-size: 90%;
 }
 
-.sortByStar {
+:local(.sortByStar) {
     width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
 }
 
-.sortStar-before {
+:local(.sortStarBefore) {
     border-top: 2px solid gray;
     text-align: left;
     width: 110px;
@@ -97,7 +97,7 @@
     justify-content: space-between;
 
 }
-.sortStar-after {
+:local(.sortStarAfter) {
     border: 1px solid #e3e3e3;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -109,7 +109,7 @@
     justify-content: space-between;
 }
 
-.smallArrow {
+:local(.smallArrow) {
     padding-right: 5px;
 }
 
@@ -135,14 +135,14 @@ li:hover {
     border-bottom: 2px solid #e3e3e3;
 }
 
-.sortByMain {
+:local(.sortByMain ){
     text-align: left;
     padding-top: 15px;
     padding-bottom: 15px;
     margin-left: 100px;    
 }
 
-.sortBy {
+:local(.sortBy) {
     text-align: left;
     width: 220px;
     border: 1px solid #e3e3e3;
@@ -155,11 +155,11 @@ li:hover {
     justify-content: space-between;
 }
 
-.optionForSortBy li {
+:local(.optionForSortBy li) {
     width: 220px;
 }
 
-.optionForSortBy {
+:local(.optionForSortBy ){
     position: absolute;
     width: 220px;
     background-color: white;
@@ -169,7 +169,7 @@ li:hover {
 }
 
 
-.options{
+:local(.options){
     position: absolute;
     width: 110px;
     background-color: white;
@@ -182,70 +182,70 @@ li:hover {
 /* Main Review Component */
 
 
-.review {
+:local(.review) {
     display: block;
     padding-top: 40px; 
     padding-bottom: 40px; 
     border-bottom: 1px solid #e3e3e3;
 }
 
-.reviewTitle{
+:local(.reviewTitle){
     padding-top: 10px;
 }
 
-.description {
+:local(.description) {
     padding-top: 18px;
     padding-bottom: 18px;
     font-size:90%;
 }
 
-.ratings {
+:local(.ratings) {
     padding-top: 10px;
     font-size: 90%;
 }
 
-.ratings div {
+:local(.ratings div) {
     padding-bottom: 5px;
 }
 
-.ratings strong {
+:local(.ratings strong ){
     padding-right: 5px;
 }
 
-div.leftColumn {
+:local(.leftColumn ){
     display: inline-block;
     white-space: normal;
     width: 60%;
     padding-right: 90px;
 }
 
-div.rightColumn {
+:local(.rightColumn ){
     vertical-align: top;
     display: inline-block;
     text-align: left;
     font-size: 90%;
 }
 
-.star-ratings-css {
+:local(.starRatingsCss) {
     width: 70px;
     position: relative;
 }
 
-.star-ratings-css-top {
+:local(.starRatingsCssTop) {
     position: absolute;
     overflow: hidden;
     color: black;
     display: block;
 }
 
-.star-ratings-css-bottom {
+:local(.starRatingsCssBottom) {
     color: #e3e3e3;
     display: block;
 }
 
 
 /* page selector */
-.pageSelectorBody {
+:local(.pageSelectorBody) {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -255,47 +255,47 @@ div.rightColumn {
     border-bottom: 1px solid #e3e3e3;
 }
 
-.selectNum {
+:local(.selectNum) {
     flex-grow: 0.5;
     display: flex;
     justify-content: space-evenly;
 }
 
-path {
+:local(path) {
     stroke: #737373;
 }
 
-.previous {
+:local(.previous) {
     display: flex;
     align-items: center;
 }
 
-.previous span {
+:local(.previous span) {
     margin-left: 10px;
 }
 
-.next{
+:local(.next){
     display: flex;
     align-items: center;
 }
 
-.next span {
+:local(.next span) {
     margin-right: 10px;
 }
 
-.previous:hover {
+:local(.previous:hover) {
     cursor: pointer;
 }
 
-.previous span:hover {
+:local(.previous span:hover) {
     text-decoration: underline;
 }
 
-.next:hover {
+:local(.next:hover) {
     cursor: pointer;
 }
 
-.next span:hover {
+:local(.next span:hover) {
     text-decoration: underline;
 }
 

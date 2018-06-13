@@ -4,6 +4,7 @@ import ReviewList from './ReviewList.jsx';
 import Sorting from './Sorting.jsx';
 import ReviewSummary from './ReviewSummary.jsx';
 import PageSelector from './PageSelector.jsx';
+import styles from '../main.css'
 
 class App extends React.Component {
   constructor(props) {
@@ -148,7 +149,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="nerdstromReviewPage">
+      <div className={styles.nerdstromReviewPage}>
         <div className="reviewSummaryMain">
           <ReviewSummary
             aveStar={this.state.aveStar}
@@ -157,7 +158,7 @@ class App extends React.Component {
             totalReviews={this.state.totalReviews}
           />
         </div>
-        <div className="sorting" >
+        <div className={styles.sorting} >
           <Sorting sortedByNumber={this.sortedByNumber} />
         </div>
         <div className="reviews">

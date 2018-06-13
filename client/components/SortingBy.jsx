@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from '../main.css'
+
 
 class SortingBy extends React.Component {
   constructor(props) {
@@ -23,10 +25,10 @@ class SortingBy extends React.Component {
     };
     if (!this.props.status) {
       return (
-        <td className="sortByMain">
-          <div className="sortBy" onClick={() => this.props.clicked()}>
+        <td className={styles.sortByMain}>
+          <div className={styles.sortBy} onClick={() => this.props.clicked()}>
             { sortVal[this.state.sortVal] || 'Sort Reviews'}
-            <span className="smallArrow">
+            <span className={styles.smallArrow}>
               <svg height="7" width="12">
                 <path d="M 6.002 6 L 1 1 m 5.002 5 L 11 1.002" />
               </svg>
@@ -36,16 +38,16 @@ class SortingBy extends React.Component {
       );
     }
     return (
-      <td className="sortByMain">
-        <div className="sortBy" onClick={() => this.props.clicked()}>
+      <td className={styles.sortByMain}>
+        <div className={styles.sortBy} onClick={() => this.props.clicked()}>
           Sort Reviews
-          <span className="smallArrow">
+          <span className={styles.smallArrow}>
             <svg height="7" width="12">
               <path d="M 5.998 1 L 11 6 M 5.998 1 L 1 5.998" />
             </svg>
           </span>
         </div>
-        <ul className="optionForSortBy" onClick={e => this.clickHandler(e)}>
+        <ul className={styles.optionForSortBy} onClick={e => this.clickHandler(e)}>
           <li value="10"> Star Rating </li>
           <li value="11"> Submission Time</li>
         </ul>

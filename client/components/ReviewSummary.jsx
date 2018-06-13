@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../main.css'
 
 const ReviewSummary = (props) => {
   const fitRating = {
@@ -21,32 +22,32 @@ const ReviewSummary = (props) => {
   const star = ((props.aveStar) / 5 * 100) || 0 ;
 
   return (
-    <div className="reviewSummary">
-      <div className="summaryTitle">
+    <div className={styles.reviewSummary}>
+      <div className={styles.summaryTitle}>
         REVIEWS
       </div>
-      <div className="summaryBody">
+      <div className={styles.summaryBody}>
         <div className="summaryStar">
           <div className="star-ratings-summary">
-            <div className="star-ratings-main">
-              <div className="star-ratings-css-top" style={{width: `${star}%`}}>
+            <div className={styles.starRatingsMain}>
+              <div className={styles.starRatingsCssTop} style={{width: `${star}%`}}>
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
-              <div className="star-ratings-css-bottom">
+              <div className={styles.starRatingsCssBottom}>
                 <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
               </div>
             </div>
-            <div className="reviewCount">
+            <div className={styles.reviewCount}>
               {props.totalReviews}
             </div>
           </div>
         </div>
-        <div className="summaryRating">
+        <div className={styles.summaryRating}>
           <div>
             <strong>
               Fit rating:
             </strong>
-            <span>
+            <span className={styles.summaryRatingVal}>
               {fitRating[props.aveFitRating]}
             </span>
           </div>
@@ -54,13 +55,13 @@ const ReviewSummary = (props) => {
             <strong>
               Width rating:
             </strong>
-            <span>
+            <span className={styles.summaryRatingVal}>
               {widthRating[props.aveWidthRating]}
             </span>
           </div>
         </div>
-        <div className="writeReview">
-          <div>
+        <div className={styles.writeReview}>
+          <div className={styles.writeReviewVal}>
             Write a Review
           </div>
         </div>
