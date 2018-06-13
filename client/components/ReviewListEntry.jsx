@@ -2,17 +2,19 @@ import React from 'react';
 import FitRating from './FitRating.jsx';
 import WidthRating from './WidthRating.jsx';
 import Stars from './Stars.jsx';
+import styles from '../main.css'
+
 
 const ReviewListEntry = props => (
-  <div className="review">
-    <div className="leftColumn">
+  <div className={styles.review}>
+    <div className={styles.leftColumn}>
       <Stars star={props.review.stars} />
-      <div className="reviewTitle">
+      <div className={styles.reviewTitle}>
         <strong>
           {props.review.title}
         </strong>
       </div>
-      <div className="description">
+      <div className={styles.description}>
         {props.review.description}
       </div>
       <div className="reviewerInfo">
@@ -24,11 +26,11 @@ const ReviewListEntry = props => (
         </span>
       </div>
     </div>
-    <div className="rightColumn">
+    <div className={styles.rightColumn}>
       <span>
         {new Date(props.review.date).toLocaleString('en-US', { year: 'numeric', day: 'numeric', month: 'long' })}
       </span>
-      <div className="ratings">
+      <div className={styles.ratings}>
         <FitRating fit={props.review.fitRating} />
         <WidthRating width={props.review.widthRating} />
       </div>
