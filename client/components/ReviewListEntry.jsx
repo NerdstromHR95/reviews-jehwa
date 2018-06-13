@@ -17,7 +17,7 @@ const ReviewListEntry = props => (
       <div className={styles.description}>
         {props.review.description}
       </div>
-      <div className="reviewerInfo">
+      <div className={styles.reviewerInfo}>
         <span>
           {props.review.nickname}
         </span>
