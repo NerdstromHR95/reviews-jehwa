@@ -16,6 +16,6 @@ From within the root directory:
 1. Run "npm install" to install dependencies.
 2. Start MongoDB
 3. Run "node dataGenerator.js" to create database
-4. Run "npm build" to build webpack bundle
-5. Run "npm start" to start server
+4. Run "npm run build" to build webpack bundle
+5. Run "npm run start" to start the server
 

@@ -8,5 +8,5 @@ db.Review.insertMany(data, (err) => {
   if (err) {
     console.log(err, 'error during building mock data');
   }
-  // mongoose.connection.close();
+  mongoose.connection.close();
 });
