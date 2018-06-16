@@ -1,10 +1,8 @@
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
 const data = require('../mockData.js');
-const config = require('../config');
-// mongoose.connect('mongodb://localhost/reviews');
 
-mongoose.connect(`mongodb+srv://${config.id}:${config.password}@nerdstrom-sxh1b.mongodb.net/test?retryWrites=true`);
+mongoose.connect(process.env.mongoURL || 'mongodb://localhost/reviews');
 
 Promise.promisifyAll(require('mongoose'));
 

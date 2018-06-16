@@ -1,0 +1,13 @@
+version: "2"
+services:
+  reviews:
+    container_name: reviews
+    restart: always
+    build: .
+    ports:
+      - "3002:3002"
+    secrets: 
+      - mongo_secret
+secrets:
+  mongo_secret:
+    file: ./config.js
