@@ -24,6 +24,7 @@ app.get('/:itemNo/reviews/filter/:starNo/:sortedByTime', (req, res) => {
     .catch(err => res.statusCode(500).send(err));
 });
 
-
-app.listen(3002, () => console.log('server is listening on port 3002'));
+// console.log(process.env.PORT);
+let port = process.env.PORT || 3002;
+app.listen(port, () => console.log(`server is listening on port ${port}`));
 

@@ -13,5 +13,7 @@ review-bundle.js
 ##vscode
 .vscode/
 
+Archive.zip
+npm-debug.log
 
 
