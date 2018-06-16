@@ -4,7 +4,7 @@ const data = require('../mockData.js');
 const config = require('../config');
 // mongoose.connect('mongodb://localhost/reviews');
 
-mongoose.connect(`mongodb+srv://${config.id}:${config.password}@nerdstrom-sxh1b.mongodb.net/test?retryWrites=true`);
+mongoose.connect(`mongodb+srv://${config.id}:${config.password}@nerdstrom-sxh1b.mongodb.net/reviews?retryWrites=true`);
 
 Promise.promisifyAll(require('mongoose'));
 
