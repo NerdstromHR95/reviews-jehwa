@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 const Promise = require('bluebird');
 const data = require('../mockData.js');
+const config = require('../config');
+// mongoose.connect('mongodb://localhost/reviews');
 
-mongoose.connect('mongodb://localhost/reviews');
+mongoose.connect(`mongodb+srv://${config.id}:${config.password}@nerdstrom-sxh1b.mongodb.net/test?retryWrites=true`);
+
 Promise.promisifyAll(require('mongoose'));
 
 const reviewSchema = mongoose.Schema({
@@ -18,7 +21,6 @@ const reviewSchema = mongoose.Schema({
 });
 
 const Review = mongoose.model('Review', reviewSchema);
-
 
 Review.count((err, count) => {
   if (err) {

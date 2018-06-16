@@ -4,8 +4,13 @@
 ##npm packages
 node_modules/
 
+##config
+config.js
+
 ##webpack output bundle
 review-bundle.js
 
 ##vscode
 .vscode/
+
+
